@@ -1,0 +1,78 @@
+
+.active {
+  color: #333;
+}
+
+.hover:hover {
+  color: #333;
+}
+
+.admin-navbar {
+  padding: 20px 0px;
+}
+
+.admin-navbar ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+.admin-families {
+  width: 100%;
+}
+
+.admin-create-families {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.admin-create-families form {
+  display: flex;
+  justify-content: space-around;
+  padding: 15px;
+}
+
+.admin-create-families input {
+  padding: 8px;
+  outline: none;
+}
+
+.admin-create-families input:first-child {
+  width: 20%;
+}
+
+.admin-create-families input:nth-child(2){
+  width: 60%;
+}
+
+.admin-families-list ul {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.admin-families-list li {
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid #bbb;
+}
+
+.admin-contact {
+  display: flex;
+  justify-content: center;
+}
+
+.contact-input {
+  margin: 10px;
+  padding: 8px;
+  font-size: 16px;
+  width: 275px;
+}
+
+@media (min-width: 450px) {
+  .admin-navbar {
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+}

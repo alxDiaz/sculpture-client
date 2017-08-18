@@ -31,7 +31,6 @@ handleSubmit(event) {
   render() {
     return (
       <div className="admin-create-families">
-        This is families list
         <form onSubmit={this.handleSubmit}>
           <input type="text" placeholder="Title" name="title" value={this.state.title} onChange={this.handleChange}/>
           <input type="text" placeholder="Description" name="description" value={this.state.description} onChange={this.handleChange}/>

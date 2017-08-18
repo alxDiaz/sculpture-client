@@ -1,8 +1,6 @@
 import React from 'react';
 import axios from 'axios';
 
-import './admin-contact.css'
-
 class AdminContact extends React.Component {
   constructor(props) {
     super(props)
