@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 
+import AdminFamiliesListItem from './admin-families-list-item';
+
 class AdminFamiliesList extends React.Component {
   constructor(props) {
     super(props);

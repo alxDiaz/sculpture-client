@@ -5,7 +5,7 @@ import AdminFamiliesList from './admin-families-list';
 
 const AdminFamilies = () => {
   return (
-    <div>
+    <div className="admin-families">
       <AdminCreateFamilies />
       <AdminFamiliesList />
     </div>
