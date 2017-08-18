@@ -48,12 +48,8 @@ class AdminContact extends React.Component {
     address: this.state.address,
     phone: this.state.phone
   })
-  .then(function (response) {
-    console.log(response);
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
+    .then(response => console.log(response))
+    .catch(error => console.log(error))
   }
 
   render() {
