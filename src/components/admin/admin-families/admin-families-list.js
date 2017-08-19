@@ -1,11 +1,12 @@
 import React from 'react';
 
 import AdminFamiliesListItem from './admin-families-list-item';
+import AdminCreateArtworks from './admin-artworks/admin-create-artworks';
 
 const AdminFamiliesList = (props) => {
 
   const familyItems = props.families.map((item) => {
-    console.log(item)
+    // console.log(item)
     return <AdminFamiliesListItem key={item._id} family={item} />
   })
 
@@ -14,7 +15,7 @@ const AdminFamiliesList = (props) => {
       <ul>
         {familyItems}
       </ul>
-      
+      <AdminCreateArtworks family={props.families}/>
     </div>
   )
 }
