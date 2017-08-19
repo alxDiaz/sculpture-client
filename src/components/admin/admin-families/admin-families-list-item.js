@@ -1,17 +1,12 @@
 import React from 'react';
 
-class AdminFamiliesListItem extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+const AdminFamiliesListItem = ({family}) => {
 
-  render() {
-    return(
-      <div className="admin-families-list-item">
-        
-      </div>
-    )
-  }
+  return (
+    <li className="admin-families-list-item">
+      {family.title}
+    </li>
+  )
 }
 
 export default AdminFamiliesListItem;
