@@ -1,3 +1,20 @@
+input {
+  padding: 8px;
+  outline: none;
+}
+
+input[type=submit] {
+  border: 2px solid transparent;
+  background: #bbb;
+  color: #333;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  border: 2px solid #bbb;
+  background: #fff;
+  color: #aaa;
+}
 
 .active {
   color: #333;
@@ -29,11 +46,6 @@
   display: flex;
   justify-content: space-around;
   padding: 15px;
-}
-
-.admin-create-families input {
-  padding: 8px;
-  outline: none;
 }
 
 .admin-create-families input:first-child {

@@ -10,14 +10,14 @@ class AdminContact extends React.Component {
       web: '',
       address: '',
       phone: '',
+      username: '',
+      password: '',
       id: ''
     }
     this.api = 'http://localhost:27017/api/users'
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-
-  // const api = 'http://localhost:27017/api/users'
 
   componentWillMount() {
     axios.get(this.api)
@@ -28,6 +28,8 @@ class AdminContact extends React.Component {
         web: res.data[0].web,
         address: res.data[0].address,
         phone: res.data[0].phone,
+        username: res.data[0].username,
+        password: res.data[0].password,
         _id: res.data[0]._id
       }))
       .catch(error => console.log(error))
@@ -44,7 +46,9 @@ class AdminContact extends React.Component {
     email: this.state.email,
     web: this.state.web,
     address: this.state.address,
-    phone: this.state.phone
+    phone: this.state.phone,
+    username: this.state.username,
+    password: this.state.password
   })
     .then(response => console.log(response))
     .catch(error => console.log(error))
@@ -59,6 +63,8 @@ class AdminContact extends React.Component {
           <input type="text" className="contact-input" placeholder="web" name="web" value={this.state.web} onChange={this.handleChange} />
           <input type="text" className="contact-input" placeholder="address" name="address" value={this.state.address} onChange={this.handleChange} />
           <input type="text" className="contact-input" placeholder="phone" name="phone" value={this.state.phone} onChange={this.handleChange} />
+          <input type="text" className="contact-input" placeholder="username" name="username" value={this.state.username} onChange={this.handleChange} />
+          <input type="password" className="contact-input" placeholder="password" name="password" value={this.state.password} onChange={this.handleChange} />
           <input type="submit" value="Save" />
         </form>
       </div>

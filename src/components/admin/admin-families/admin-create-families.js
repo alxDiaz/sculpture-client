@@ -41,5 +41,4 @@ handleSubmit(event) {
   }
 }
 
-
 export default AdminCreateFamilies;
