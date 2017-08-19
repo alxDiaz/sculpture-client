@@ -14,6 +14,7 @@ const AdminFamiliesList = (props) => {
       <ul>
         {familyItems}
       </ul>
+      
     </div>
   )
 }
