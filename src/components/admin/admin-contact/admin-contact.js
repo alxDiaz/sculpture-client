@@ -41,6 +41,7 @@ class AdminContact extends React.Component {
   }
 
   handleSubmit(event) {
+    event.preventDefault();
     axios.put(`${this.api}/${this.state._id}`, {
     name: this.state.name,
     email: this.state.email,
