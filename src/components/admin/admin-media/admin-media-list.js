@@ -7,11 +7,11 @@ const AdminMediaList = (props) => {
 
   const mediaItems = props.medias.map((item) => {
     // console.log(item)
-    return <li className="admin-media-item" key={item._id}> {item.title}</li>
+    return <li className="admin-families-list-item" key={item._id}> {item.title}</li>
   })
 
   return (
-    <div className="admin-media-list">
+    <div className="admin-families-list">
       <ul>
         {mediaItems}
       </ul>
