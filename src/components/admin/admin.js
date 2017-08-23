@@ -9,6 +9,7 @@ import './admin.css';
 import AdminNavbar from './admin-navbar';
 import AdminFamilies from './admin-families/admin-families';
 import AdminContact from './admin-contact/admin-contact'
+import AdminMedia from './admin-media/admin-media'
 
 const Admin = () => {
   return (
@@ -17,6 +18,7 @@ const Admin = () => {
         <AdminNavbar />
         <Route path="/admin/families" component={AdminFamilies} />
         <Route path="/admin/contact" component={AdminContact} />
+        <Route path="/admin/media" component={AdminMedia} />
       </div>
     </Router>
 
