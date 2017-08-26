@@ -1,9 +1,9 @@
 import React from 'react';
 
-const AdminFamiliesListItem = ({family}) => {
+const AdminFamiliesListItem = ({family, onFamilySelect}) => {
 
   return (
-    <li className="admin-families-list-item">
+    <li className="admin-families-list-item" onClick={() => onFamilySelect(family.title, family._id)}>
       {family.title}
     </li>
   )

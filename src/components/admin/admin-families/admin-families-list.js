@@ -7,7 +7,12 @@ const AdminFamiliesList = (props) => {
 
   const familyItems = props.families.map((item) => {
     // console.log(item)
-    return <AdminFamiliesListItem key={item._id} family={item} />
+    return (
+        <AdminFamiliesListItem
+          key={item._id}
+          family={item}
+          onFamilySelect={props.onFamilySelect} />
+    )
   })
 
   return (
@@ -15,7 +20,10 @@ const AdminFamiliesList = (props) => {
       <ul>
         {familyItems}
       </ul>
-      <AdminCreateArtworks family={props.families}/>
+      <AdminCreateArtworks
+        family={props.families}
+        selectedFamilyTitle={props.selectedFamilyTitle}
+        selectedFamilyId={props.selectedFamilyId}/>
     </div>
   )
 }

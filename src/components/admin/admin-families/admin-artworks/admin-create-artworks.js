@@ -43,8 +43,14 @@ class AdminCreateArtworks extends React.Component {
     }
 
     render(){
+
+        if(!this.props.selectedFamilyTitle) {
+          return <p>Select a Family</p>
+        }
+
         return (
             <div className="admin-create-artworks" >
+                <p>{this.props.selectedFamilyTitle}</p>
                 <form onSubmit={this.handleSubmit}>
                   <input type="text" placeholder="Name" name="name" value={this.state.name} onChange={this.handleChange} />
                   <input type="text" placeholder="Material" name="material" value={this.state.material} onChange={this.handleChange} />

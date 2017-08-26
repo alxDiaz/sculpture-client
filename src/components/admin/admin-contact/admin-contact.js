@@ -42,7 +42,7 @@ class AdminContact extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    
+
     axios.put(`${this.api}/${this.state._id}`, {
     name: this.state.name,
     email: this.state.email,
@@ -67,7 +67,7 @@ class AdminContact extends React.Component {
           <input type="text" className="contact-input" placeholder="phone" name="phone" value={this.state.phone} onChange={this.handleChange} />
           <input type="text" className="contact-input" placeholder="username" name="username" value={this.state.username} onChange={this.handleChange} />
           <input type="password" className="contact-input" placeholder="password" name="password" value={this.state.password} onChange={this.handleChange} />
-          <input type="submit" value="Save" />
+          <input type="submit" className="contact-submit" value="Save" />
         </form>
       </div>
     )

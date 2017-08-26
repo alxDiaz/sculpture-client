@@ -9,7 +9,9 @@ class AdminFamilies extends React.Component {
     super(props);
 
     this.state = {
-      families: []
+      families: [],
+      selectedFamilyTitle: null,
+      selectedFamilyId: null //saturday 26
     }
 
     this.api = 'http://localhost:27017/api/families';
@@ -26,7 +28,12 @@ class AdminFamilies extends React.Component {
     return (
       <div className="admin-families">
         <AdminCreateFamilies />
-        <AdminFamiliesList families={this.state.families}/>
+        <AdminFamiliesList
+          families={this.state.families}
+          selectedFamilyTitle={this.state.selectedFamilyTitle}
+          selectedFamilyId={this.state.selectedFamilyId}
+          onFamilySelect={(selectedFamilyTitle, selectedFamilyId) => this.setState({selectedFamilyTitle, selectedFamilyId}) }/>
+        {console.log(this.state.selectedFamilyTitle)}
       </div>
     )
   }
