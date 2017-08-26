@@ -2,7 +2,7 @@ import React from 'react';
 
 import AdminArtworksListItem from './admin-artworks-list-item';
 
-const AdminArtworksList = ({artworks, selectedFamilyId}) => {
+const AdminArtworksList = ({artworks, selectedFamilyId, onArtworkSelect}) => {
 
 
   if(!selectedFamilyId) {
@@ -11,7 +11,12 @@ const AdminArtworksList = ({artworks, selectedFamilyId}) => {
 
   const artworksByFamilyId = artworks.filter(artwork => artwork.family === selectedFamilyId)
   const artworksList = artworksByFamilyId.map(artwork => {
-      return <AdminArtworksListItem key={artwork._id} artworks={artwork} />
+      return (
+        <AdminArtworksListItem
+          key={artwork._id}
+          artworks={artwork}
+          onArtworkSelect={onArtworkSelect}/>
+      )
   })
 
   return (
