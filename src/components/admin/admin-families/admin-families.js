@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import AdminCreateFamilies from './admin-create-families';
 import AdminFamiliesList from './admin-families-list';
+import AdminArtworks from './admin-artworks/admin-artworks';
 
 class AdminFamilies extends React.Component {
   constructor(props) {
@@ -20,7 +21,7 @@ class AdminFamilies extends React.Component {
   componentWillMount() {
     axios.get(this.api)
       // .then(res => console.log(res.data))
-      .then(res => this.setState({families: res.data}))
+      .then(res => this.setState({families: res.data, selectedFamilyTitle: res.data[0].title, selectedFamilyId: res.data[0]._id}))
       .catch(error => console.log(error))
   }
 
@@ -33,6 +34,9 @@ class AdminFamilies extends React.Component {
           selectedFamilyTitle={this.state.selectedFamilyTitle}
           selectedFamilyId={this.state.selectedFamilyId}
           onFamilySelect={(selectedFamilyTitle, selectedFamilyId) => this.setState({selectedFamilyTitle, selectedFamilyId}) }/>
+        <AdminArtworks
+          selectedFamilyTitle={this.state.selectedFamilyTitle}
+          selectedFamilyId={this.state.selectedFamilyId}/>
         {console.log(this.state.selectedFamilyTitle)}
       </div>
     )

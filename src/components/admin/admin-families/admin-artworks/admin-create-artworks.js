@@ -7,7 +7,7 @@ class AdminCreateArtworks extends React.Component {
 
         this.state = {
             name: '',
-            family: "599775b063943902f4c18806",
+            family: '',
             material: '',
             specs: '',
         }
@@ -23,13 +23,13 @@ class AdminCreateArtworks extends React.Component {
     }
 
     handleSubmit(event){
-      event.preventDefault();
+      // event.preventDefault();
       const files = this.filesInput.files;
       console.log(files[0]);
 
       this.formData.append('image', files[0]);
       this.formData.append('name', this.state.name);
-      this.formData.append('family', this.state.family);
+      this.formData.append('family', this.props.selectedFamilyId);
       this.formData.append('material', this.state.material);
       this.formData.append('specs', this.state.specs);
 
@@ -50,7 +50,8 @@ class AdminCreateArtworks extends React.Component {
 
         return (
             <div className="admin-create-artworks" >
-                <p>{this.props.selectedFamilyTitle}</p>
+                <h3>{this.props.selectedFamilyTitle}</h3>
+                <h2>{this.props.selectedFamilyId}</h2>
                 <form onSubmit={this.handleSubmit}>
                   <input type="text" placeholder="Name" name="name" value={this.state.name} onChange={this.handleChange} />
                   <input type="text" placeholder="Material" name="material" value={this.state.material} onChange={this.handleChange} />
