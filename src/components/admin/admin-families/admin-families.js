@@ -12,7 +12,7 @@ class AdminFamilies extends React.Component {
     this.state = {
       families: [],
       selectedFamilyTitle: null,
-      selectedFamilyId: null //saturday 26
+      selectedFamilyId: null
     }
 
     this.api = 'http://localhost:27017/api/families';

@@ -9,7 +9,9 @@ class AdminArtworks extends React.Component {
     super(props);
 
     this.state = {
-      artworks: []
+      artworks: [],
+      selectedArtworkName: null,
+      selectedArtworkId: null
     }
 
     this.api = 'http://localhost:27017/api/artworks';
@@ -27,7 +29,11 @@ class AdminArtworks extends React.Component {
           family={this.props.families}
           selectedFamilyTitle={this.props.selectedFamilyTitle}
           selectedFamilyId={this.props.selectedFamilyId}/>
-        <AdminArtworksList artworks={this.state.artworks} selectedFamilyId={this.props.selectedFamilyId}/>
+        <AdminArtworksList
+          artworks={this.state.artworks}
+          selectedFamilyId={this.props.selectedFamilyId}
+          onArtworkSelect={(selectedArtworkName, selectedArtworkId) => this.setState({selectedArtworkName, selectedArtworkId})}/>
+        <p>The artwork selected is: {this.state.selectedArtworkName}</p>
       </div>
 
     )
