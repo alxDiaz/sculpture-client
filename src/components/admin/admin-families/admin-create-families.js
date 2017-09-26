@@ -20,7 +20,7 @@ handleChange(event) {
 }
 
 handleSubmit(event) {
-  // event.preventDefault();
+  event.preventDefault();
   axios.post(this.api, {
     title: this.state.title,
     description: this.state.description
