@@ -25,6 +25,13 @@ class AdminFamilies extends React.Component {
       .catch(error => console.log(error))
   }
 
+  componentDidUpdate() {
+    axios.get(this.api)
+      // .then(res => console.log(res.data))
+      .then(res => this.setState({families: res.data, selectedFamilyTitle: res.data[0].title, selectedFamilyId: res.data[0]._id}))
+      .catch(error => console.log(error))
+  }
+
   render() {
     return (
       <div className="admin-families">
